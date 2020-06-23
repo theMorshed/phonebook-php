@@ -125,14 +125,6 @@ function getFriend($id) {
 function updateFriend($id, $fname, $lname, $address, $number) {
     $serializedFriends = file_get_contents(DB_NAME);
     $unserializeFriends = unserialize($serializedFriends);
-    // foreach($unserializeFriends as $friend) {
-    //     if($friend['id'] == $id) {
-    //         $friend['fname'] = $fname;
-    //         $friend['lname'] = $lname;
-    //         $friend['address'] = $address;
-    //         $friend['number'] = $number;
-    //     }
-    // }
     $unserializeFriends[$id - 1]['fname'] = $fname;
     $unserializeFriends[$id - 1]['lname'] = $lname;
     $unserializeFriends[$id - 1]['address'] = $address;
